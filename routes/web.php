@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,3 +29,6 @@ Route::POST('/profile/name', [HomeController::class, 'profile_name_update'])->mi
 Route::POST('/Update/password', [HomeController::class, 'Update_password'])->middleware(['auth', 'verified'])->name('update.pass');
 Route::POST('/profile/image', [HomeController::class, 'Update_image'])->middleware(['auth', 'verified'])->name('profile.image');
 
+//Category Add
+Route::get('/category', [CategoryController::class, 'Category'])->middleware(['auth', 'verified'])->name('category');
+Route::post('/category/store', [CategoryController::class, 'Category_store'])->middleware(['auth', 'verified'])->name('category.store');

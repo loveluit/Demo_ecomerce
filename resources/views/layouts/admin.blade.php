@@ -98,7 +98,7 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
-                                            <a href="add-category.html" class="">
+                                            <a href="{{ route('category') }}" class="">
                                                 <div class="text">New Category</div>
                                             </a>
                                         </li>
@@ -385,7 +385,7 @@
                                                     @else
                                                     <img src="{{ asset('uploads/user') }}/{{ Auth::user()->image }}" alt="">
                                                     @endif
-                                                    
+
                                                 </span>
                                                 <span class="flex flex-column">
                                                     <span class="body-title mb-2">{{ Auth::user()->name }}</span>
