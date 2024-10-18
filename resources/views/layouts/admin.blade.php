@@ -18,6 +18,10 @@
     <link rel="apple-touch-icon-precomposed" href="{{ asset('back_end') }}/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="{{ asset('back_end') }}/css/sweetalert.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('back_end') }}/css/custom.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"  crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
 
 <body class="body">
@@ -103,7 +107,7 @@
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
-                                            <a href="categories.html" class="">
+                                            <a href="{{ route('category.view') }}" class="">
                                                 <div class="text">Categories</div>
                                             </a>
                                         </li>
@@ -561,6 +565,14 @@
         jQuery(window).on("resize", function () { });
         })(jQuery);
         </script>
+
+
         </body>
+
+        {{-- <script>
+                    $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+          })
+        </script> --}}
 
         </html>

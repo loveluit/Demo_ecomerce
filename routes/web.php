@@ -32,3 +32,5 @@ Route::POST('/profile/image', [HomeController::class, 'Update_image'])->middlewa
 //Category Add
 Route::get('/category', [CategoryController::class, 'Category'])->middleware(['auth', 'verified'])->name('category');
 Route::post('/category/store', [CategoryController::class, 'Category_store'])->middleware(['auth', 'verified'])->name('category.store');
+Route::get('/category/view', [CategoryController::class, 'Category_view'])->middleware(['auth', 'verified'])->name('category.view');
+Route::get('/category/delete/{cate_id}', [CategoryController::class, 'Category_delete'])->middleware(['auth', 'verified'])->name('category.delete');
