@@ -31,7 +31,7 @@ class CategoryController extends Controller
             'category_name'=>$request->category_name,
             'category_slug'=>$request->category_slug,
             'image'=>$imagename,
-            'created_at'=>Carbon::naw(),
+            'created_at'=>Carbon::now(),
         ]);
     }
     return back()->with('category','category Added Successfuly');
@@ -47,7 +47,11 @@ class CategoryController extends Controller
 
         public function Category_delete($cat_id){
 
-            Category::find($cat_id)->Delete();
+            $category = Category::find($cat_id);
+            $delete_from =public_path('uploads/category/'.$category->image);
+            unlink($delete_from);
+
+             Category::find($cat_id)->Delete();
 
             return back();
         }
