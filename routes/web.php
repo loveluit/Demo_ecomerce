@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,7 @@ Route::get('/category', [CategoryController::class, 'Category'])->middleware(['a
 Route::post('/category/store', [CategoryController::class, 'Category_store'])->middleware(['auth', 'verified'])->name('category.store');
 Route::get('/category/view', [CategoryController::class, 'Category_view'])->middleware(['auth', 'verified'])->name('category.view');
 Route::get('/category/delete/{cate_id}', [CategoryController::class, 'Category_delete'])->middleware(['auth', 'verified'])->name('category.delete');
+//product Add
+Route::get('/Add_product', [ProductController::class, 'Add_product'])->middleware(['auth', 'verified'])->name('Add.product');
+Route::post('/product_store', [ProductController::class, 'Product_store'])->middleware(['auth', 'verified'])->name('product.store');
+Route::get('/product_view', [ProductController::class, 'Product_view'])->middleware(['auth', 'verified'])->name('product.view');

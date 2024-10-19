@@ -126,11 +126,11 @@
             @csrf
             <div class="mb-3">
                 <label for="" class="form-label">category_name</label>
-                <input type="text" class="form-control" name="category_name" value="">
+                <input type="text" class="form-control" name="category_name" value="{{ $category->category_name }}">
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">categor_slug</label>
-                <input type="text" class="form-control" name="category_slug" value="">
+                <input type="text" class="form-control" name="category_slug" value="{{ $category->category_slug }}">
             </div>
             <div class="mb-3">
                <input type="file" class="form-control"  onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])"  >
