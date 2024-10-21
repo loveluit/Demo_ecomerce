@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 
@@ -19,9 +18,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('back_end') }}/css/sweetalert.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('back_end') }}/css/custom.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"  crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
 </head>
 
 <body class="body">
@@ -38,8 +42,9 @@
                 <div class="section-menu-left">
                     <div class="box-logo">
                         <a href="index.html" id="site-logo-inner">
-                            <img class="" id="logo_header" alt="" src="{{ asset('back_end') }}/images/logo/logo.png"
-                                data-light="images/logo/logo.png" data-dark="images/logo/logo.png">
+                            <img class="" id="logo_header" alt=""
+                                src="{{ asset('back_end') }}/images/logo/logo.png" data-light="images/logo/logo.png"
+                                data-dark="images/logo/logo.png">
                         </a>
                         <div class="button-show-hide">
                             <i class="icon-menu-left"></i>
@@ -84,12 +89,12 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
-                                            <a href="add-brand.html" class="">
+                                            <a href="{{ route('Add.brand') }}" class="">
                                                 <div class="text">New Brand</div>
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
-                                            <a href="brands.html" class="">
+                                            <a href="{{ route('brand.view') }}" class="">
                                                 <div class="text">Brands</div>
                                             </a>
                                         </li>
@@ -168,7 +173,8 @@
                         <div class="wrap">
                             <div class="header-left">
                                 <a href="index-2.html">
-                                    <img class="" id="logo_header_mobile" alt="" src="{{ asset('back_end') }}/images/logo/logo.png"
+                                    <img class="" id="logo_header_mobile" alt=""
+                                        src="{{ asset('back_end') }}/images/logo/logo.png"
                                         data-light="images/logo/logo.png" data-dark="images/logo/logo.png"
                                         data-width="154px" data-height="52px" data-retina="images/logo/logo.png">
                                 </a>
@@ -179,8 +185,9 @@
 
                                 <form class="form-search flex-grow">
                                     <fieldset class="name">
-                                        <input type="text" placeholder="Search here..." class="show-search" name="name"
-                                            tabindex="2" value="" aria-required="true" required="">
+                                        <input type="text" placeholder="Search here..." class="show-search"
+                                            name="name" tabindex="2" value="" aria-required="true"
+                                            required="">
                                     </fieldset>
                                     <div class="button-submit">
                                         <button class="" type="submit"><i class="icon-search"></i></button>
@@ -197,7 +204,8 @@
                                                 <ul>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="{{ asset('back_end') }}/images/products/17.png" alt="">
+                                                            <img src="{{ asset('back_end') }}/images/products/17.png"
+                                                                alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -211,7 +219,8 @@
                                                     </li>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="{{ asset('back_end') }}/images/products/18.png" alt="">
+                                                            <img src="{{ asset('back_end') }}/images/products/18.png"
+                                                                alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -225,7 +234,8 @@
                                                     </li>
                                                     <li class="product-item gap14">
                                                         <div class="image no-bg">
-                                                            <img src="{{ asset('back_end') }}/images/products/19.png" alt="">
+                                                            <img src="{{ asset('back_end') }}/images/products/19.png"
+                                                                alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -248,7 +258,8 @@
                                                 <ul>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="{{ asset('back_end') }}/images/products/20.png" alt="">
+                                                            <img src="{{ asset('back_end') }}/images/products/20.png"
+                                                                alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -262,7 +273,8 @@
                                                     </li>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="{{ asset('back_end') }}/images/products/21.png" alt="">
+                                                            <img src="{{ asset('back_end') }}/images/products/21.png"
+                                                                alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -366,7 +378,8 @@
                                                     <div>
                                                         <div class="body-title-2">Order pending: <span>ID 305830</span>
                                                         </div>
-                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper</div>
+                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -384,10 +397,12 @@
                                             id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-user wg-user">
                                                 <span class="image">
-                                                    @if (Auth::user()->image==null)
-                                                    <img src="{{ asset('back_end') }}/images/avatar/user-1.png" alt="">
+                                                    @if (Auth::user()->image == null)
+                                                        <img src="{{ asset('back_end') }}/images/avatar/user-1.png"
+                                                            alt="">
                                                     @else
-                                                    <img src="{{ asset('uploads/user') }}/{{ Auth::user()->image }}" alt="">
+                                                        <img src="{{ asset('uploads/user') }}/{{ Auth::user()->image }}"
+                                                            alt="">
                                                     @endif
 
                                                 </span>
@@ -421,11 +436,11 @@
                                                 <form method="POST" action="{{ route('logout') }}">
                                                     @csrf
 
-                                                <button type="submit" class="nav-link border-0 bg-transparent">
-                                                    <i data-feather="log-out"></i>
-                                                    <span>Log Out</span>
-                                                </button>
-                                            </form>
+                                                    <button type="submit" class="nav-link border-0 bg-transparent">
+                                                        <i data-feather="log-out"></i>
+                                                        <span>Log Out</span>
+                                                    </button>
+                                                </form>
                                             </li>
                                         </ul>
                                     </div>
@@ -434,145 +449,156 @@
                             </div>
                         </div>
                     </div>
-             <div class="main-content">
+                    <div class="main-content">
 
 
-                @yield('content')
+                        @yield('content')
 
 
-                <div class="bottom-page">
-                    <div class="body-text">Copyright © 2024 SurfsideMedia</div>
+                        <div class="bottom-page">
+                            <div class="body-text">Copyright © 2024 SurfsideMedia</div>
+                        </div>
+
+                    </div>
+
+
+
+
                 </div>
 
-        </div>
 
 
 
-
-        </div>
-
-
-
-
-        </div>
+            </div>
 
         </div>
 
 
-        </div>
+    </div>
 
-        <script src="{{ asset('back_end') }}/js/jquery.min.js"></script>
-        <script src="{{ asset('back_end') }}/js/bootstrap.min.js"></script>
-        <script src="{{ asset('back_end') }}/js/bootstrap-select.min.js"></script>
-        <script src="{{ asset('back_end') }}/js/sweetalert.min.js"></script>
-        <script src="{{ asset('back_end') }}/js/apexcharts/apexcharts.js"></script>
-        <script src="{{ asset('back_end') }}/js/main.js"></script>
-        <script>
-        (function ($) {
+    <script src="{{ asset('back_end') }}/js/jquery.min.js"></script>
+    <script src="{{ asset('back_end') }}/js/bootstrap.min.js"></script>
+    <script src="{{ asset('back_end') }}/js/bootstrap-select.min.js"></script>
+    <script src="{{ asset('back_end') }}/js/sweetalert.min.js"></script>
+    <script src="{{ asset('back_end') }}/js/apexcharts/apexcharts.js"></script>
+    <script src="{{ asset('back_end') }}/js/main.js"></script>
+    <script>
+        (function($) {
 
-        var tfLineChart = (function () {
+            var tfLineChart = (function() {
 
-        var chartBar = function () {
+                var chartBar = function() {
 
-        var options = {
-        series: [{
-            name: 'Total',
-            data: [0.00, 0.00, 0.00, 0.00, 0.00, 273.22, 208.12, 0.00, 0.00, 0.00, 0.00, 0.00]
-        }, {
-            name: 'Pending',
-            data: [0.00, 0.00, 0.00, 0.00, 0.00, 273.22, 208.12, 0.00, 0.00, 0.00, 0.00, 0.00]
-        },
-        {
-            name: 'Delivered',
-            data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
-        }, {
-            name: 'Canceled',
-            data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
-        }],
-        chart: {
-            type: 'bar',
-            height: 325,
-            toolbar: {
-                show: false,
-            },
-        },
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: '10px',
-                endingShape: 'rounded'
-            },
-        },
-        dataLabels: {
-            enabled: false
-        },
-        legend: {
-            show: false,
-        },
-        colors: ['#2377FC', '#FFA500', '#078407', '#FF0000'],
-        stroke: {
-            show: false,
-        },
-        xaxis: {
-            labels: {
-                style: {
-                    colors: '#212529',
-                },
-            },
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        },
-        yaxis: {
-            show: false,
-        },
-        fill: {
-            opacity: 1
-        },
-        tooltip: {
-            y: {
-                formatter: function (val) {
-                    return "$ " + val + ""
-                }
-            }
-        }
-        };
+                    var options = {
+                        series: [{
+                                name: 'Total',
+                                data: [0.00, 0.00, 0.00, 0.00, 0.00, 273.22, 208.12, 0.00, 0.00,
+                                    0.00, 0.00, 0.00
+                                ]
+                            }, {
+                                name: 'Pending',
+                                data: [0.00, 0.00, 0.00, 0.00, 0.00, 273.22, 208.12, 0.00, 0.00,
+                                    0.00, 0.00, 0.00
+                                ]
+                            },
+                            {
+                                name: 'Delivered',
+                                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00,
+                                    0.00, 0.00
+                                ]
+                            }, {
+                                name: 'Canceled',
+                                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00,
+                                    0.00, 0.00
+                                ]
+                            }
+                        ],
+                        chart: {
+                            type: 'bar',
+                            height: 325,
+                            toolbar: {
+                                show: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: false,
+                                columnWidth: '10px',
+                                endingShape: 'rounded'
+                            },
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        legend: {
+                            show: false,
+                        },
+                        colors: ['#2377FC', '#FFA500', '#078407', '#FF0000'],
+                        stroke: {
+                            show: false,
+                        },
+                        xaxis: {
+                            labels: {
+                                style: {
+                                    colors: '#212529',
+                                },
+                            },
+                            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+                                'Oct', 'Nov', 'Dec'
+                            ],
+                        },
+                        yaxis: {
+                            show: false,
+                        },
+                        fill: {
+                            opacity: 1
+                        },
+                        tooltip: {
+                            y: {
+                                formatter: function(val) {
+                                    return "$ " + val + ""
+                                }
+                            }
+                        }
+                    };
 
-        chart = new ApexCharts(
-        document.querySelector("#line-chart-8"),
-        options
-        );
-        if ($("#line-chart-8").length > 0) {
-        chart.render();
-        }
-        };
+                    chart = new ApexCharts(
+                        document.querySelector("#line-chart-8"),
+                        options
+                    );
+                    if ($("#line-chart-8").length > 0) {
+                        chart.render();
+                    }
+                };
 
-        /* Function ============ */
-        return {
-        init: function () { },
+                /* Function ============ */
+                return {
+                    init: function() {},
 
-        load: function () {
-        chartBar();
-        },
-        resize: function () { },
-        };
-        })();
+                    load: function() {
+                        chartBar();
+                    },
+                    resize: function() {},
+                };
+            })();
 
-        jQuery(document).ready(function () { });
+            jQuery(document).ready(function() {});
 
-        jQuery(window).on("load", function () {
-        tfLineChart.load();
-        });
+            jQuery(window).on("load", function() {
+                tfLineChart.load();
+            });
 
-        jQuery(window).on("resize", function () { });
+            jQuery(window).on("resize", function() {});
         })(jQuery);
-        </script>
+    </script>
 
 
-        </body>
+</body>
 
-        {{-- <script>
+{{-- <script>
                     $('#myModal').on('shown.bs.modal', function () {
             $('#myInput').trigger('focus')
           })
         </script> --}}
 
-        </html>
+</html>

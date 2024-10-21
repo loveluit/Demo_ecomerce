@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -20,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 //Home
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
@@ -39,3 +40,8 @@ Route::get('/category/delete/{cate_id}', [CategoryController::class, 'Category_d
 Route::get('/Add_product', [ProductController::class, 'Add_product'])->middleware(['auth', 'verified'])->name('Add.product');
 Route::post('/product_store', [ProductController::class, 'Product_store'])->middleware(['auth', 'verified'])->name('product.store');
 Route::get('/product_view', [ProductController::class, 'Product_view'])->middleware(['auth', 'verified'])->name('product.view');
+//Add Brand
+Route::get('/Add_brand', [BrandController::class, 'Add_brand'])->middleware(['auth', 'verified'])->name('Add.brand');
+Route::post('/brand/store', [BrandController::class, 'Brand_store'])->middleware(['auth', 'verified'])->name('brand.store');
+Route::get('/brand/view', [BrandController::class, 'Brand_view'])->middleware(['auth', 'verified'])->name('brand.view');
+Route::get('/brand/delete/{brand_id}', [BrandController::class, 'Brand_del'])->middleware(['auth', 'verified'])->name('brand.del');
