@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
@@ -45,3 +46,6 @@ Route::get('/Add_brand', [BrandController::class, 'Add_brand'])->middleware(['au
 Route::post('/brand/store', [BrandController::class, 'Brand_store'])->middleware(['auth', 'verified'])->name('brand.store');
 Route::get('/brand/view', [BrandController::class, 'Brand_view'])->middleware(['auth', 'verified'])->name('brand.view');
 Route::get('/brand/delete/{brand_id}', [BrandController::class, 'Brand_del'])->middleware(['auth', 'verified'])->name('brand.del');
+//Admin User
+Route::get('/admin/user', [AdminController::class, 'Admin_user'])->middleware(['auth', 'verified'])->name('admin.user');
+Route::get('/admin/usertype/{user_id}', [AdminController::class, 'Admin_usertype'])->middleware(['auth', 'verified'])->name('admin.usertype');

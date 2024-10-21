@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
@@ -11,69 +12,74 @@ use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('dashboard');
     }
 
     //Admin profile
 
-    function profile(){
+    function profile()
+    {
 
 
         return view('Admin.profile');
     }
 
-    function profile_name_update(Request $request){
+    function profile_name_update(Request $request)
+    {
 
         $validated = $request->validate([
             'name' => 'required',
             'email' => 'required',
         ]);
 
-     User::find(Auth::id())->update([
+        User::find(Auth::id())->update([
 
-        'name'=>$request->name,
-        'email'=>$request->email,
+            'name' => $request->name,
+            'email' => $request->email,
 
-     ]);
+        ]);
 
-     return back()->with('update','Your Prodile Update Success');
-
+        return back()->with('update', 'Your Prodile Update Success');
     }  // Update passwoord
 
-    function Update_password(Request $request){
+    function Update_password(Request $request)
+    {
 
 
 
         $request->validate([
             'current_password' => 'required',
-            'password' => ['required', 'confirmed',Password::min(8)
-            ->letters()
-            ->mixedCase()
-            ->numbers()
-            ->symbols()
+            'password' => [
+                'required',
+                'confirmed',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols()
 
 
-                ],
+            ],
             'password_confirmation' => 'required',
         ]);
 
-        if(Hash::check($request->current_password,Auth::user()->password)){
+        if (Hash::check($request->current_password, Auth::user()->password)) {
 
             User::find(Auth::id())->update([
-                'password'=>bcrypt($request->password),
+                'password' => bcrypt($request->password),
             ]);
 
-            return back()->with('pass','Password has Updated');
+            return back()->with('pass', 'Password has Updated');
+        } else {
 
-        }else{
-
-            return back()->with('err','Current Password does not match');
+            return back()->with('err', 'Current Password does not match');
         }
-
     }  //profile Image Update
 
-    public function Update_image(Request $request){
+    public function Update_image(Request $request)
+    {
 
         // if((Auth::user()->image !== null)){
 
@@ -83,35 +89,30 @@ class HomeController extends Controller
 
 
 
-       
+
 
 
         //  }
-                $data = new User;
-                $image = $request->image;
+        $data = new User;
+        $image = $request->image;
 
 
-                   if($image){
-                     $imagename = time().'.'.$image->getClientOriginalExtension();
-                     $request->image->move('uploads/user/',$imagename);
+        if ($image) {
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->image->move('uploads/user/', $imagename);
 
-                     $data->image=$imagename;
+            $data->image = $imagename;
 
-                     User::find(Auth::id())->update([
-                        'image' =>$imagename,
-                           ]);
+            //  User::find(Auth::id())->update([
+            //     'image' =>$imagename,
+            //        ]);
 
-                         return back()->with('update','Your Update Successfullly');
+            User::insert([
+                'image' => $imagename,
 
+            ]);
 
-                  }
+            return back()->with('update', 'Your Update Successfullly');
+        }
+    }
 }
-
-}
-
-
-
-
-
-
-
