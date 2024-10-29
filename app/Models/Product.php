@@ -16,4 +16,10 @@ class Product extends Model
 
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function rel_to_brand()
+    {
+
+        return $this->belongsTo(Brand::class, 'brand_id');
+    }
 }

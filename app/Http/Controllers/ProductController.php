@@ -7,14 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use App\Models\Brand;
 
 class ProductController extends Controller
 {
     public function Add_product()
     {
         $cate = Category::all();
+        $brands = Brand::all();
         return view('Admin.product.add_product', [
             'cate' => $cate,
+            'brands' => $brands,
         ]);
     }
     // Product Store

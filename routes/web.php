@@ -3,18 +3,18 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Font_endController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+//Font_End
+Route::get('/', [Font_endController::class, 'Master'])->name('index.page');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 //Home
 
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth', 'admin'])->name('dashboard');
 //Profile Change All
 Route::get('/profile/user', [HomeController::class, 'profile'])->middleware(['auth', 'verified'])->name('profile.name');
 Route::POST('/profile/name', [HomeController::class, 'profile_name_update'])->middleware(['auth', 'verified'])->name('name.update');
@@ -49,3 +49,8 @@ Route::get('/brand/delete/{brand_id}', [BrandController::class, 'Brand_del'])->m
 //Admin User
 Route::get('/admin/user', [AdminController::class, 'Admin_user'])->middleware(['auth', 'verified'])->name('admin.user');
 Route::get('/admin/usertype/{user_id}', [AdminController::class, 'Admin_usertype'])->middleware(['auth', 'verified'])->name('admin.usertype');
+//Font_end
+Route::get('/shop', [Font_endController::class, 'Shop'])->name('font.shop');
+Route::get('/cart', [Font_endController::class, 'Cart'])->name('font.cart');
+Route::get('/about', [Font_endController::class, 'About'])->name('font.about');
+Route::get('/contact', [Font_endController::class, 'Contact'])->name('font.contact');

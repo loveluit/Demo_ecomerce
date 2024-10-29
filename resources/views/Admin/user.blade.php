@@ -56,6 +56,9 @@
                                         <td>{{ $index + 1 }}</td>
                                         <td class="pname">
                                             <div class="image">
+                                                {{-- @if (Auth::user()->image == null)
+                                                    <img src="images/avatar/user-1.png" alt="">
+                                                @else --}}
                                                 <img src="{{ asset('uploads/user') }}/{{ $user->image }}" alt=""
                                                     class="image">
                                             </div>

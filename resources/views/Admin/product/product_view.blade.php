@@ -70,7 +70,7 @@
                                     <td>{{ $product->sale_price }}</td>
                                     <td>{{ $product->sku }}</td>
                                     <td>{{ $product->rel_to_category->category_name }}</td>
-                                    <td>Brand2</td>
+                                    <td>{{ $product->rel_to_brand->barnd_name }}</td>
                                     <td>{{ $product->featured }}</td>
                                     <td>{{ $product->stock }}</td>
                                     <td>{{ $product->quantity }}</td>
