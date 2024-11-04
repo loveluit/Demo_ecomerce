@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class Font_endController extends Controller
 {
     public function Master()
     {
-
-        return view('Font_end.index');
+        $categorys = Category::all();
+        $products = Product::all();
+        return view('Font_end.index', [
+            'categorys' => $categorys,
+            'products' => $products,
+        ]);
     }
     public function Shop()
     {
@@ -30,5 +36,18 @@ class Font_endController extends Controller
     {
 
         return view('Font_end.contact');
+    }
+    public function wishlist()
+    {
+
+        return view('Font_end.wishlist');
+    }
+    public function details($id)
+    {
+        $products = Product::where('id', $id)->first();
+        // $post = Post::where('slug', $slug_id)->first();
+        return view('Font_end.products_details', [
+            'products' => $products,
+        ]);
     }
 }

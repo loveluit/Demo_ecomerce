@@ -54,3 +54,5 @@ Route::get('/shop', [Font_endController::class, 'Shop'])->name('font.shop');
 Route::get('/cart', [Font_endController::class, 'Cart'])->name('font.cart');
 Route::get('/about', [Font_endController::class, 'About'])->name('font.about');
 Route::get('/contact', [Font_endController::class, 'Contact'])->name('font.contact');
+Route::get('/wishlist', [Font_endController::class, 'wishlist'])->name('font.wishlist');
+Route::get('/products/details/{id}', [Font_endController::class, 'details'])->name('products.detail');

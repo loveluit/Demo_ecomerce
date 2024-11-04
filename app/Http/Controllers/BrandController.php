@@ -20,6 +20,15 @@ class BrandController extends Controller
 
     public function Brand_store(Request $request)
     {
+        // $brands = Brand::all();
+        // if ($brands->image != null) {
+        //     $delete_from = public_path('uploads/brand/' . $brands->imamjn
+
+        //     ge);
+        //     if (file_exists($delete_from)) {
+        //         unlink($delete_from);
+        //     }
+        // }
 
         $data = new Brand();
         $image = $request->image;
