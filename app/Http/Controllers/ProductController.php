@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Models\Brand;
+use App\Models\Addcart;
 
 class ProductController extends Controller
 {
@@ -78,6 +79,25 @@ class ProductController extends Controller
         return view('Admin.product.product_view', [
             'product_view' => $product_view,
         ]);
+    }  //addToCart
+
+    public function addToCart(Request $request, $id)
+    {
+
+
+        $product = Product::find($id);
+
+        if (!$product) {
+            return redirect()->route('index.page')->with('error', 'Product not found');
+        }
+
+        $cart = new Addcart();
+        $cart->product_id = $product->id;
+        $cart->quantity = $request->quantity ?? 1;
+        $cart->save();
+
+        return redirect()->route('index.page')->with('success', 'Product added to cart');
     }
 }
+
  //

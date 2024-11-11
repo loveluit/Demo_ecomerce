@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Addcart;
+use Illuminate\Support\Facades\View;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+
+        View::composer('*', function ($view) {
+            $cartItems = Addcart::all();
+            $count = 0;
+
+            foreach ($cartItems as $item) {
+                $count += $item->quantity;
+            }
+
+            $view->with('count', $count);
+        });
     }
 }

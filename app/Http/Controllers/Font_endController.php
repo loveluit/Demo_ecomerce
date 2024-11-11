@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Addcart;
 use Illuminate\Http\Request;
 
 class Font_endController extends Controller
@@ -12,9 +13,17 @@ class Font_endController extends Controller
     {
         $categorys = Category::all();
         $products = Product::all();
+        //Addcart
+        $cartItems = Addcart::all();
+        $count = 0;
+        foreach ($cartItems as $item) {
+            $count += $item->quantity;
+        }
+
         return view('Font_end.index', [
             'categorys' => $categorys,
             'products' => $products,
+            'count' => $count,
         ]);
     }
     public function Shop()
@@ -24,8 +33,8 @@ class Font_endController extends Controller
     }
     public function Cart()
     {
-
-        return view('Font_end.cart');
+        $carts = Addcart::all();
+        return view('Font_end.cart', compact('carts'));
     }
     public function About()
     {
